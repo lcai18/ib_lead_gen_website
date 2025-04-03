@@ -2,11 +2,14 @@
   "name": "saasable-ui-free",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://lcai18.github.io/ib_lead_gen_website",
   "author": {
     "email": "phoenixcoded@gmail.com",
     "name": "phoenixcoded"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -37,6 +40,7 @@
     "eslint-config-next": "15.0.3",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.2.1",
+    "gh-pages": "^6.3.0",
     "prettier": "3.3.3"
   }
 }
