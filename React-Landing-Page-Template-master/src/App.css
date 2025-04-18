@@ -30,3 +30,9 @@
   transition: all 0.2s ease;
   margin-top: 0;
 }
+
+.client-section {
+  margin-bottom: 100px;
+  padding-top: 80px;
+  border-bottom: 1px solid #eee;
+}

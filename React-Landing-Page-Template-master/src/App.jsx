@@ -9,6 +9,7 @@ import { Gallery } from "./components/gallery";
 import Clients from "./components/clients";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
+import ScrollToHash from "./components/scroll_helpers/scroll_to_hash";
 import JsonData from "./data/data.json";
 import "./App.css";
 
@@ -33,6 +34,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToHash />
       <Navigation />
       <Switch>
         <Route exact path="/" render={() => <Home data={landingPageData} />} />
