@@ -6,7 +6,7 @@ import { Features } from "./components/features";
 import { About } from "./components/about";
 import { Services } from "./components/services";
 import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
+import Clients from "./components/clients";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
@@ -19,7 +19,7 @@ const Home = ({ data }) => (
     <About data={data.About} />
     <Services data={data.Services} />
     <Gallery data={data.Gallery} />
-    <Testimonials data={data.Testimonials} />
+    <Clients data={data.Clients} />
     <Team data={data.Team} />
     <Contact data={data.Contact} />
   </>
@@ -49,10 +49,7 @@ const App = () => {
           path="/services"
           render={() => <Services data={landingPageData.Services} />}
         />
-        <Route
-          path="/clients"
-          render={() => <Testimonials data={landingPageData.Testimonials} />}
-        />
+        <Route path="/clients" render={() => <Clients />} />
         <Route
           path="/team"
           render={() => <Team data={landingPageData.Team} />}
