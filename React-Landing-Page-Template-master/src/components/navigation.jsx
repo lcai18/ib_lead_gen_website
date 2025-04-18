@@ -1,66 +1,70 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const Navigation = (props) => {
+export const Navigation = () => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
-          <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-          >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-          </button>
-          <a className="navbar-brand page-scroll" href="#page-top">
-            React Landing Page
-          </a>{" "}
+          <a className="navbar-brand" href="/">
+            <img
+              src="../img/SecondWindLogo.png"
+              alt="Logo"
+              style={{ height: "30px", width: "auto", display: "inline-block" }}
+            />
+          </a>
         </div>
-
         <div
           className="collapse navbar-collapse"
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="#features" className="page-scroll">
-                Features
-              </a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#about" className="page-scroll">
-                About
-              </a>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <a href="#services" className="page-scroll">
-                Services
+              <Link to="/services">Services</Link>
+            </li>
+            <li className="dropdown">
+              <a
+                href="#"
+                className="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Clients <span className="caret"></span>
               </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to="/clients#investment-banks">Investment Banks</Link>
+                </li>
+                <li>
+                  <Link to="/clients#search-funds">Search Funds</Link>
+                </li>
+                <li>
+                  <Link to="/clients#private-equity">Private Equity Firms</Link>
+                </li>
+                <li>
+                  <Link to="/clients#venture-capital">
+                    Venture Capital Firms
+                  </Link>
+                </li>
+                <li className="disabled">
+                  <a href="#">Case Studies (Coming Soon)</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <Link to="/team">Book a Demo</Link>
             </li>
             <li>
-              <a href="#portfolio" className="page-scroll">
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="#team" className="page-scroll">
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll">
-                Contact
-              </a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>

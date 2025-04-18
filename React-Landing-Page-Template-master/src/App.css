@@ -16,3 +16,17 @@
     width: 110%;
   }
 }
+.navbar-nav > .dropdown > .dropdown-menu {
+  left: 0;
+  right: auto;
+}
+/* Enable dropdown on hover */
+.navbar-nav > .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Optional: Add a little delay and styling */
+.navbar-nav > .dropdown > .dropdown-menu {
+  transition: all 0.2s ease;
+  margin-top: 0;
+}

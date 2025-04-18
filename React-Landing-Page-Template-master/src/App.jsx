@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
 import { Features } from "./components/features";
@@ -9,13 +10,20 @@ import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
-import SmoothScroll from "smooth-scroll";
 import "./App.css";
 
-export const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000,
-  speedAsDuration: true,
-});
+const Home = ({ data }) => (
+  <>
+    <Header data={data.Header} />
+    <Features data={data.Features} />
+    <About data={data.About} />
+    <Services data={data.Services} />
+    <Gallery data={data.Gallery} />
+    <Testimonials data={data.Testimonials} />
+    <Team data={data.Team} />
+    <Contact data={data.Contact} />
+  </>
+);
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
@@ -24,17 +32,37 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <Router>
       <Navigation />
-      <Header data={landingPageData.Header} />
-      <Features data={landingPageData.Features} />
-      <About data={landingPageData.About} />
-      <Services data={landingPageData.Services} />
-      <Gallery data={landingPageData.Gallery} />
-      <Testimonials data={landingPageData.Testimonials} />
-      <Team data={landingPageData.Team} />
-      <Contact data={landingPageData.Contact} />
-    </div>
+      <Switch>
+        <Route exact path="/" render={() => <Home data={landingPageData} />} />
+        <Route
+          path="/about"
+          render={() => (
+            <>
+              <About data={landingPageData.About} />
+              <Team data={landingPageData.Team} />
+            </>
+          )}
+        />
+        <Route
+          path="/services"
+          render={() => <Services data={landingPageData.Services} />}
+        />
+        <Route
+          path="/clients"
+          render={() => <Testimonials data={landingPageData.Testimonials} />}
+        />
+        <Route
+          path="/team"
+          render={() => <Team data={landingPageData.Team} />}
+        />
+        <Route
+          path="/contact"
+          render={() => <Contact data={landingPageData.Contact} />}
+        />
+      </Switch>
+    </Router>
   );
 };
 
