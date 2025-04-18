@@ -25,9 +25,26 @@ export const Navigation = () => {
             <li>
               <Link to="/about">About Us</Link>
             </li>
-            <li>
-              <Link to="/services">Services</Link>
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                Services <span className="caret"></span>
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to="/services#deal-origination">Deal Origination</Link>
+                </li>
+                <li>
+                  <Link to="/services#client-research">Client Research</Link>
+                </li>
+                <li>
+                  <Link to="/services#email-targeting">Email Targeting</Link>
+                </li>
+                <li>
+                  <Link to="/services#crm-integration">CRM Integration</Link>
+                </li>
+              </ul>
             </li>
+
             <li className="dropdown">
               <a
                 href="#"

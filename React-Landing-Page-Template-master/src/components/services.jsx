@@ -1,31 +1,15 @@
 import React from "react";
-
+import DealOrigination from "./service_pages/deal_origination";
+import ClientResearch from "./service_pages/client_research";
+import CRMIntegration from "./service_pages/crm_integration";
+import EmailTargeting from "./service_pages/email_targeting";
 export const Services = (props) => {
   return (
-    <div id="services" className="text-center">
-      <div className="container">
-        <div className="section-title">
-          <h2>Our Services</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
-          </p>
-        </div>
-        <div className="row">
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4">
-                  {" "}
-                  <i className={d.icon}></i>
-                  <div className="service-desc">
-                    <h3>{d.name}</h3>
-                    <p>{d.text}</p>
-                  </div>
-                </div>
-              ))
-            : "loading"}
-        </div>
-      </div>
+    <div id="services" className="container" style={{ paddingTop: "100px" }}>
+      <DealOrigination />
+      <ClientResearch />
+      <CRMIntegration />
+      <EmailTargeting />
     </div>
   );
 };
